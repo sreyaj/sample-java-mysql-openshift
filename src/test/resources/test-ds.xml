@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is an unmanaged datasource. It should be used for proofs of concept 
+  or testing only. It uses H2, an in memory database that ships with JBoss 
+  AS. -->
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+  <datasource jndi-name="java:jboss/datasources/TestDS"
+      pool-name="TestDS" enabled="true"
+      use-java-context="true">
+    <connection-url>jdbc:h2:mem:kitchensink-quickstart-test;DB_CLOSE_DELAY=-1</connection-url>
+    <driver>h2</driver>
+    <security>
+      <user-name>sa</user-name>
+      <password>sa</password>
+    </security>
+  </datasource>
+
+  <!--
+    Uncomment to test with MySQL:
+  <datasource jndi-name="java:jboss/datasources/MySQLTest"
+      use-java-context="true" pool-name="MySQLTest" use-ccm="true" enabled="true">
+    <connection-url>jdbc:mysql://localhost/test</connection-url>
+    <driver>com.mysql</driver>
+    <security>
+      <user-name>shippable</user-name>
+    </security>
+  </datasource>
+  <drivers>
+    <driver name="com.mysql" module="com.mysql.jdbc">
+      <xa-datasource-class>com.mysql.jdbc.Driver</xa-datasource-class>
+    </driver>
+  </drivers>
+  -->
+</datasources>
