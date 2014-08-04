@@ -22,4 +22,4 @@ script:
   - mvn test -Parq-jbossas-managed
 
 after_success:
-  - git push openshift master
+  - git push -f openshift $BRANCH:master
