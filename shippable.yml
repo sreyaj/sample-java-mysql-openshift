@@ -1,5 +1,5 @@
 language: java
-build_image: drydock/u12javall:tip
+build_image: drydock/u14javall:tip
 
 services:
    - mysql
